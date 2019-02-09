@@ -670,7 +670,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     // REFACTORED ADVENTURER INTO ITS OWN FUNCTION  
     case adventurer:
 
-      adventurer();
+      adventurer_function();
 
       
     case council_room:
@@ -699,7 +699,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     
     // REFACTORED SO FEAST HAS ITS OWN FUNCTION 
     case feast:
-      feast();
+      feast_function();
       
     case gardens:
       return -1;
@@ -768,12 +768,12 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     // REFACTORED - SMITHY IS NOW A SEPARATE FUNCTION
     case smithy:
 
-      smithy();
+      smithy_function();
 
 
     // REFACTORED - GREAT_HALL IS NOW A SEPARATE FUNCTION
     case great_hall:
-      great_hall();
+      great_hall_function();
     
     case minion:
       //+1 action
@@ -1045,7 +1045,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     // REFACTORED INTO ITS OWN FUNCTION
     case sea_hag:
 
-      sea_hag();
+      sea_hag_function();
     
     case treasure_map:
       //search hand for another treasure_map
@@ -1186,7 +1186,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
   return 0;
 }
 
-int smithy()
+int smithy_function()
 {
         //+3 Cards
       for (i = 0; i < 3; i++)
@@ -1263,7 +1263,7 @@ int smithy()
       return 0;
 }
 
-int adventurer()
+int adventurer_function()
 {
         while(drawntreasure<2){
   if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
@@ -1288,7 +1288,7 @@ int adventurer()
       return 1;
 }
 
-int feast()
+int feast_function()
 {
         //gain card with cost up to 5
       //Backup hand
@@ -1343,7 +1343,7 @@ int feast()
       return 0;
 }
 
-int great_hall()
+int great_hall_function()
 {
         //+1 Card
       drawCard(currentPlayer, state);
@@ -1358,7 +1358,7 @@ int great_hall()
       return 0;
 }
 
-int sea_hag()
+int sea_hag_function()
 {
       for (i = 0; i < state->numPlayers; i++){
   // BUG: ORIGINAL LINE - if (i != currentPlayer)
