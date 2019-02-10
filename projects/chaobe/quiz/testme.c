@@ -13,8 +13,8 @@ char inputChar()
 
     // note that possibilities for ascii values are 0-125 (add one to make sure 125 is a possibility)
     // generate a random number, divide by the max possible value and the char generated is value of the leftover value
-    int max = 126;
-    int c = rand() % max;
+    int max = 94;
+    int c = rand() % max + 32;
     return (char)c;
 }
 
@@ -22,13 +22,13 @@ char *inputString()
 {
     // TODO: rewrite this function
     static char s[6];
-    int max = 26;
+    int max = 16;
     int max2 = 2;
-    int c1 = rand() % max + 97;
-    int c2 = rand() % max + 97;
-    int c3 = rand() % max + 97;
-    int c4 = rand() % max + 97;
-    int c5 = rand() % max + 97;
+    int c1 = rand() % max + 101;
+    int c2 = rand() % max + 101;
+    int c3 = rand() % max + 101;
+    int c4 = rand() % max + 101;
+    int c5 = rand() % max + 101;
     int c6 = rand() % max2;
     s[0] = (char)c1;
     s[1] = (char)c2;
