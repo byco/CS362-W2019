@@ -1,0 +1,23 @@
+Breakpoint 1 at 0x400967: file randomtestadventurer_bc.c, line 45.
+Starting program: /nfs/stak/users/chaobe/CS362/assignment-5/dominion/randomtestadventurer_bc 
+
+Breakpoint 1, main (argc=1, argv=0x7fffffffdb38) at randomtestadventurer_bc.c:45
+45	        printf("gs2 hand: %i\n", gs2.handCount[newPlayer]);
+$1 = 0
+47	        cardEffect(adventurer, i, choice2, choice3, &gs2, handPos, &coin_bonus);
+$2 = 0
+$3 = 0
+$4 = (struct gameState *) 0x7fffffff0c80
+
+Program received signal SIGINT, Interrupt.
+supplyCount (card=0, state=0x7fffffff0c80) at dominion.c:320
+320	int supplyCount(int card, struct gameState *state) {
+Currently logging to "gdb.txt".
+Logs will be appended to the log file.
+Output is being logged and displayed.
+321	  return state->supplyCount[card];
+A debugging session is active.
+
+	Inferior 1 [process 9964] will be killed.
+
+Quit anyway? (y or n) 

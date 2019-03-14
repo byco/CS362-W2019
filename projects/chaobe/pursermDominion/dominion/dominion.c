@@ -647,7 +647,7 @@ int getCost(int cardNumber)
 int adventurerCard(int currentPlayer, struct gameState *state, int drawntreasure){
 	int temphand[MAX_HAND];
 	int z = 0; // counter for tempHand
-	while(drawntreasure<3){
+	while(drawntreasure<2){
 		//if the deck is empty, shuffle discard and add to deck.
 		if(state->deckCount[currentPlayer] <1){
 			shuffle(currentPlayer, state);
@@ -744,11 +744,11 @@ int cutpurseCard(struct gameState *state, int currentPlayer, int handPos){
 int sea_hagCard(struct gameState *state, int currentPlayer){
 	int i;
 	for(i = 0; i < state->numPlayers; i++){
-			state->deck[i][state->deckCount[i]--] = curse; //Top card now curse
 		if(i != currentPlayer){
-			state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];
-			state->deckCount[i]--;
-			state->discardCount[i]++;
+            state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];          
+            state->deckCount[i]--;
+            state->discardCount[i]++;
+            state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
 		}
 	}
 	return 0;
